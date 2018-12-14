@@ -1,0 +1,69 @@
+{
+    "manifestVersion": 1,
+    "id": "pagangil-result-details",
+    "publisher": "pagangil",
+    "version": "1.0.19",
+    "name": "Result Details",
+    "description": "An extension which shows the details of the selected test case result",
+    "public": false,
+    "categories": ["Azure Pipelines"],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "my-pivot-item",
+            "type": "ms.vss-web.tab",
+            "targets": [
+                "ms.vss-test-web.test-result-details-tab-items"
+            ],
+            "description": "extension to show test result id",
+            "properties": {
+                "name": "Result Details",
+                "uri": "my-pivot.html",
+                "order": 107
+            }
+        },
+        {
+            "id": "my-result-toolbar-menu-item",
+            "type": "ms.vss-web.action",
+            "targets": [
+                "ms.vss-test-web.test-results-actions-menu"
+            ],
+            "description": "extension to show menu item in results toolbar",
+            "properties": {
+                "text": "Action2",
+                "title": "ms.vss-test-web.test-results-actions-menu",
+                "icon": "images/show-properties.png",
+                "group": "actions",
+                "uri": "my-menu-action.html",
+                "registeredObjectId": "showProperties"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "my-pivot.html",
+            "addressable": true
+        },
+        {
+            "path": "my-menu-action.html",
+            "addressable": true
+        },
+        {
+            "path": "scripts",
+            "addressable": true
+        },
+        {
+            "path": "images",
+            "addressable": true
+        },
+        {
+            "path": "node_modules/vss-web-extension-sdk/lib",
+            "addressable": true,
+            "packagePath": "lib"
+        }
+    ]
+}
